@@ -1,97 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Your Name – Data Scientist & Researcher</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Viktor Skantze – Precision Nutrition & Data Science</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0;
-      background: #f8f9fa; color: #333;
+      background: #fafbfb;
+      color: #222;
+      margin: 0;
+      padding: 0;
     }
-    header {
-      background: #3762c5;
-      color: #fff;
-      padding: 2rem 0 1.5rem 0;
-      text-align: center;
-    }
-    main {
-      max-width: 700px;
-      margin: 2rem auto;
+    .container {
+      max-width: 800px;
+      margin: 2.5rem auto;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(100,100,100,0.06);
-      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(50, 50, 50, 0.07);
+      padding: 2.5rem 2rem;
     }
-    h1 { margin-top: 0;}
-    .section-title { color: #3762c5; margin-top: 2rem; }
-    ul { padding-left: 1.2rem;}
-    footer {
-      text-align: center; 
-      margin-top: 2rem;
-      padding-bottom: 1.5rem;
-      color: #888;
+    h1 {
+      margin-top: 0;
+      font-size: 2.4rem;
     }
-    .btn {
-      background: #3762c5;
-      color: #fff;
+    h2 {
+      color: #3465a4;
+      margin-top: 2.3rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.3rem;
+    }
+    ul, p {
+      line-height: 1.5;
+    }
+    .links a {
+      margin-right: 1.1rem;
       text-decoration: none;
-      padding: 0.5em 1.1em;
-      border-radius: 4px;
-      margin-top: 1rem;
-      display: inline-block;
+      color: #3762c5;
+      font-weight: bold;
     }
-    @media (max-width: 768px) {
-      main { padding: 1rem;}
+    .profile-img {
+      float: right;
+      margin: 0 0 1.5rem 2rem;
+      width: 110px;
+      height: 110px;
+      border-radius: 55px;
+      border: 1px solid #eee;
+      background: #eee;
+      object-fit: cover;
+    }
+    .projects .project {
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .projects img {
+      float: right;
+      max-width: 160px;
+      margin: 0 0 0.7em 1.2em;
+      border-radius: 6px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    .projects b {
+      font-size: 1.1rem;
+    }
+    footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.97rem;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+      .profile-img {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem auto;
+        width: 90px;
+        height: 90px;
+      }
+      .projects img {
+        float: none;
+        display: block;
+        margin: 0 auto 0.8rem auto;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-<header>
-  <h1>Your Name</h1>
-  <p>PhD in Precision Nutrition · Data Scientist & Applied Researcher</p>
-  <a href="mailto:youremail@example.com" class="btn">Contact Me</a>
-</header>
-
-<main>
-  <section>
-    <h2 class="section-title">About Me</h2>
+  <div class="container">
+    <!-- Replace 'profile.jpg' with the filename of your profile picture -->
+    <img src="profile.jpg" alt="Viktor Skantze" class="profile-img" />
+    <h1>Viktor Skantze</h1>
     <p>
-      Welcome! I'm a data scientist specializing in precision nutrition, mathematical modeling, and machine learning for health data. My work bridges complex research and real-world impact.
+      PhD in Mathematical Modelling · Data Scientist in Precision Nutrition<br />
+      Researcher | Applied ML | Integrative Health Science
     </p>
-  </section>
 
-  <section>
-    <h2 class="section-title">Selected Projects</h2>
-    <ul>
-      <li>
-        <b>Dynamic Glucose Prediction</b> – Developed models for personalizing insulin delivery in type 1 diabetes, and optimizing meals to reduce risk in type 2 diabetes.
-      </li>
-      <li>
-        <b>Metabotyping via Dynamic Modelling</b> – Built models to classify glucose response to standardized test meals.
-      </li>
-      <li>
-        <b>Multi-metabolite Prediction</b> – Created predictive models covering 79 postprandial metabolites.
-      </li>
-      <li>
-        <b>Integrative Multi-omics Analysis</b> – Integrated metabolite and microbiota profiles to stratify health status in population cohorts.
-      </li>
-    </ul>
-  </section>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/viktor-skantze-352159120" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/vskantze" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+      <a href="mailto:viktor.skantze@fcc.chalmers.se">Email</a>
+    </div>
 
-  <section>
-    <h2 class="section-title">CV & Links</h2>
+    <h2>About me</h2>
     <p>
-      <a href="https://www.linkedin.com/in/yourname" target="_blank" class="btn">LinkedIn</a>
-      <a href="cv.pdf" class="btn">Download CV</a>
-      <a href="https://github.com/yourusername" target="_blank" class="btn">GitHub</a>
+      I’m a data scientist and researcher specializing in mathematical modelling for personalized nutrition and health. My work bridges advanced statistical methods, machine learning, and integrative biology to turn complex data into actionable health insights. I hold a PhD focused on precision nutrition, and I’m passionate about translating science into real-world solutions.
     </p>
-  </section>
-</main>
 
-<footer>
-  &copy; 2025 Your Name · Powered by GitHub Pages
-</footer>
+    <h2>Selected Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="glucose.png" alt="Dynamic Glucose Prediction" />
+        <b>Dynamic Glucose Prediction</b><br />
+        Developed mathematical models to personalize insulin delivery for type 1 diabetes and mathematically optimize meals for type 2 diabetes,
+        enabling improved blood glucose control.<br />
+        <i>Figure:</i> Example of predicted vs. observed glucose profiles.
+      </div>
+
+      <div class="project">
+        <img src="metabotyping.png" alt="Metabotyping with Tensor Modelling" />
+        <b>Metabotyping with Tensor Modelling</b><br />
+        Created workflows for metabolic response clustering using dynamic glucose data and tensor decomposition, identifying meaningful metabolic subgroups.<br />
+        <i>Figure:</i> Clustering visualization from model output.
+      </div>
+
+      <div class="project">
+        <img src="multimetabolite.png" alt="Multi-metabolite Model" />
+        <b>Multi-metabolite Prediction</b><br />
+        Developed unified models to predict postprandial levels of 79 metabolites within a single statistical framework.<br />
+        <i>Figure:</i> Heatmap showing model accuracy across metabolites.
+      </div>
+
+      <div class="project">
+        <img src="multiomics.png" alt="Multi-omics Variation Analysis" />
+        <b>Multi-omics Variation Analysis</b><br />
+        Integrated metabolomics and microbiota profiles to stratify metabolic health in large population cohorts.<br />
+        <i>Figure:</i> Schematic of the multi-omics data integration pipeline.
+      </div>
+    </div>
+
+    <h2>Contact</h2>
+    <p>
+      For collaboration, speaking, or consulting:<br />
+      <strong>Email:</strong> viktor.skantze@fcc.chalmers.se
+    </p>
+  </div>
+  <footer>&copy; 2025 Viktor Skantze · Powered by GitHub Pages</footer>
 </body>
 </html>
