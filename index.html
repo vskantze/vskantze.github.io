@@ -52,6 +52,7 @@
       margin-bottom: 1.2rem;
       text-align: center;
       color: #404040;
+      line-height: 1.4;
     }
     .links {
       margin: 1rem 0 0.5rem 0;
@@ -65,6 +66,7 @@
       color: #3762c5;
       font-weight: bold;
       font-size: 1.01rem;
+      word-break: break-word;
     }
     .content {
       flex: 1;
@@ -87,25 +89,34 @@
       color: #202842;
     }
     .section-block { margin-bottom: 0.7rem; }
-    .projects .project {
+    .projects .project, .publications .pub {
       margin-bottom: 2.3rem;
-      overflow: hidden;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
     }
-    .projects img {
-      max-width: 170px;
-      min-width: 100px;
-      margin-right: 1.6rem;
-      margin-bottom: 0.5rem;
+    .projects img, .publications img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0.5rem 0 1rem 0;
       border-radius: 6px;
       box-shadow: 0 1px 5px rgba(0,0,0,0.07);
     }
-    .project-desc {
-      flex: 1;
-      min-width: 200px;
+    .project-desc, .pub-desc {
       word-break: break-word;
+    }
+    .pub-title {
+      font-weight: bold;
+      font-size: 1.07rem;
+      margin-top: 0.4rem;
+    }
+    .pub-citation {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+    }
+    .pub-doi {
+      font-size: 0.97rem;
+      color: #3167c1;
+      margin-bottom: 0.7rem;
     }
     @media (max-width: 950px) {
       .main {
@@ -121,15 +132,32 @@
       .sidebar img {
         margin: 0 1.2rem 0 0;
       }
-      .links { flex-direction: row; flex-wrap: wrap; justify-content: center;}
-      .links a { margin: 0.18rem 0.6rem;}
+      .links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .links a {
+        margin: 0.18rem 0.6rem;
+      }
       .content {
         padding: 1.7rem 0.9rem 2.2rem 0.9rem;
       }
     }
     @media (max-width: 600px) {
-      .main { margin: 0; border-radius: 0;}
-      .sidebar { border-radius: 0;}
+      .main {
+        margin: 0;
+        border-radius: 0;
+      }
+      .sidebar {
+        border-radius: 0;
+        flex-direction: column;
+        align-items: center;
+      }
+      .links {
+        flex-direction: column;
+        align-items: center;
+      }
     }
     footer {
       text-align: center;
@@ -142,7 +170,6 @@
 <body>
 <div class="main">
   <aside class="sidebar">
-    <!-- Replace with your own photo -->
     <img src="profile.jpg" alt="Viktor Skantze">
     <h1>Viktor Skantze</h1>
     <p>
@@ -154,6 +181,7 @@
       <a href="mailto:viktor.skantze@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/viktor-skantze-352159120" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/vskantze" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=iFrI5RcAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
       <a href="cv.pdf" target="_blank">Full CV (PDF)</a>
     </div>
   </aside>
@@ -243,36 +271,114 @@
     <h2>Selected Projects With Figures</h2>
     <div class="projects">
       <div class="project">
+        <b>Dynamic Glucose Prediction</b>
         <img src="glucose.png" alt="Dynamic Glucose Prediction"/>
         <div class="project-desc">
-          <b>Dynamic Glucose Prediction</b><br>
-          Developed dynamic models for personalized insulin dosing in type 1 diabetes and mathematically optimized diet planning for type 2 diabetes. <br />
-          <i>Figure:</i> Predicted vs. observed glucose profiles.
+          Developed dynamic models for personalized insulin dosing in type 1 diabetes and mathematically optimized diet planning for type 2 diabetes.
         </div>
       </div>
       <div class="project">
+        <b>Metabotyping via Dynamic Modelling</b>
         <img src="metabotyping.png" alt="Metabotyping with Tensor Modelling"/>
         <div class="project-desc">
-          <b>Metabotyping via Dynamic Modelling</b><br>
-          Used tensor decomposition and data-driven clustering to identify metabolic subtypes in glucose response data.<br>
-          <i>Figure:</i> Example subgroup clustering of glucose responses.
+          Used tensor decomposition and data-driven clustering to identify metabolic subtypes in glucose response data.
         </div>
       </div>
       <div class="project">
-        <img src="multi-metabolite.jpg" alt="Multi-metabolite Model"/>
+        <b>Multi-metabolite Prediction</b>
+        <img src="multimetabolite.png" alt="Multi-metabolite Model"/>
         <div class="project-desc">
-          <b>Multi-metabolite Prediction</b><br>
-          DOI: https://doi.org/10.3389/fnut.2023.1304540 <br />
-          Built unified statistical models to predict postprandial levels of 79 metabolites.<br>
-          <i>Figure:</i> Matrix/heatmap of model accuracy per metabolite.
+          Built unified statistical models to predict postprandial levels of 79+ metabolites.
         </div>
       </div>
       <div class="project">
+        <b>Multi-omics Variation Analysis</b>
         <img src="multiomics.png" alt="Multi-omics Variation Analysis"/>
         <div class="project-desc">
-          <b>Multi-omics Variation Analysis</b><br>
-          Integrated metabolic and microbiota variation to stratify health and metabolic risk in cohorts.<br>
-          <i>Figure:</i> Schematic of multi-omics data pipeline.
+          Integrated metabolic and microbiota variation to stratify health and metabolic risk in cohorts.
+        </div>
+      </div>
+    </div>
+
+    <h2>Selected Publications</h2>
+    <div class="publications">
+      <div class="pub">
+        <div class="pub-title">
+          Model-driven approaches to precision nutrition and health
+        </div>
+        <img src="fig_modeldriven.png" alt="Figure from Model-driven approaches"/>
+        <div class="pub-citation">
+          Skantze V, et al., (2024), <i>Thesis/Journal</i>
+        </div>
+        <div class="pub-doi">
+          DOI: <a href="https://doi.org/[your_DOI_here]" target="_blank">https://doi.org/[your_DOI_here]</a>
+        </div>
+        <div class="pub-desc">
+          Proposes mathematical and computational models to understand individual metabolic responses and optimize nutritional recommendations, integrating data from large population health cohorts and dynamic experiments.
+        </div>
+      </div>
+      
+      <div class="pub">
+        <div class="pub-title">
+          Individual postprandial glycemic responses to standardized test meals are reproducible and largely explained by clinical factors and gut microbiome composition
+        </div>
+        <img src="fig_postprandial.png" alt="Figure from Glycemic Responses"/>
+        <div class="pub-citation">
+          Hall H, Skantze V, et al., (2023), <i>Cell Reports Medicine</i>
+        </div>
+        <div class="pub-doi">
+          DOI: <a href="https://doi.org/10.1016/j.xcrm.2023.101222" target="_blank">https://doi.org/10.1016/j.xcrm.2023.101222</a>
+        </div>
+        <div class="pub-desc">
+          Demonstrates that individuals’ blood sugar responses to identical meals are stable over repeated tests, with major influences from clinical variables and gut microbiome features. Highlights the potential for personalized dietary advice using big data and microbiome profiling.
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          Multivariate modelling of postprandial metabolic responses to food – integrating glucose, metabolomics and microbiome
+        </div>
+        <img src="fig_multivariate.png" alt="Figure from Multivariate Modelling"/>
+        <div class="pub-citation">
+          Skantze V, et al., (2024), <i>In revision</i>
+        </div>
+        <div class="pub-doi">
+          DOI: <a href="https://doi.org/[your_DOI2_here]" target="_blank">https://doi.org/[your_DOI2_here]</a>
+        </div>
+        <div class="pub-desc">
+          Introduces new statistical models combining blood sugar, metabolite, and microbiome data to comprehensively characterize individual responses to meals and stratify metabolic phenotypes.
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          Sensitivity analysis of the NutriScore algorithm for plant-based foods
+        </div>
+        <img src="fig_nutriscore.png" alt="Figure from NutriScore Analysis"/>
+        <div class="pub-citation">
+          Skantze V, et al., (2023), <i>Industry Report</i>
+        </div>
+        <div class="pub-doi">
+          DOI: <a href="https://doi.org/[your_DOI3_here]" target="_blank">https://doi.org/[your_DOI3_here]</a>
+        </div>
+        <div class="pub-desc">
+          Evaluates how recipe variations in plant-based products affect the European NutriScore rating, providing guidance for food manufacturers aiming for best-in-class health labelling outcomes.
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          Application of dynamic glucose-insulin modelling for personalized diabetes care
+        </div>
+        <img src="fig_glucose_insulin.png" alt="Figure from Glucose-Insulin Modelling"/>
+        <div class="pub-citation">
+          Skantze V, et al., (2022), <i>IEEE Transactions on Biomedical Engineering</i>
+        </div>
+        <div class="pub-doi">
+          DOI: <a href="https://doi.org/[your_DOI4_here]" target="_blank">https://doi.org/[your_DOI4_here]</a>
+        </div>
+        <div class="pub-desc">
+          Describes a dynamic systems approach to model glucose-insulin interactions, enabling improved insulin dosing algorithms for type 1 diabetics and paving the way for individualized digital health tools.
         </div>
       </div>
     </div>
