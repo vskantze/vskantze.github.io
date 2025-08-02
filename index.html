@@ -2,153 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Viktor Skantze – Precision Nutrition & Data Science</title>
+  <title>Viktor Skantze – Math Modelling & Precision Nutrition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
       background: #fafbfb;
-      color: #222;
+      color: #232323;
       margin: 0;
       padding: 0;
     }
-    .container {
-      max-width: 800px;
-      margin: 2.5rem auto;
+    .main {
+      display: flex;
+      max-width: 1100px;
+      margin: 3rem auto;
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(50, 50, 50, 0.07);
-      padding: 2.5rem 2rem;
+      min-height: 90vh;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(50, 50, 50, 0.09);
+      padding: 0;
     }
-    h1 {
-      margin-top: 0;
-      font-size: 2.4rem;
+    .sidebar {
+      width: 300px;
+      background: #f1f6fa;
+      border-radius: 10px 0 0 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.2rem 1.2rem 2.5rem 1.2rem;
+      box-sizing: border-box;
     }
-    h2 {
+    .sidebar img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 70px;
+      border: 2.5px solid #d6e1f5;
+      margin-bottom: 1.4rem;
+      margin-top: 0.5rem;
+    }
+    .sidebar h1 {
+      margin: 0.5rem 0 0.7rem 0;
+      font-size: 1.85rem;
       color: #3465a4;
-      margin-top: 2.3rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.3rem;
+      text-align: center;
     }
-    ul, p {
-      line-height: 1.5;
+    .sidebar p {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+      color: #404040;
+    }
+    .links {
+      margin: 1rem 0 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .links a {
-      margin-right: 1.1rem;
+      margin: 0.22rem 0;
       text-decoration: none;
       color: #3762c5;
       font-weight: bold;
+      font-size: 1.01rem;
+      word-break: break-all;
     }
-    .profile-img {
-      float: right;
-      margin: 0 0 1.5rem 2rem;
-      width: 110px;
-      height: 110px;
-      border-radius: 55px;
-      border: 1px solid #eee;
-      background: #eee;
-      object-fit: cover;
+    .content {
+      flex: 1;
+      padding: 2.4rem 3rem 2.5rem 2rem;
+      min-width: 0;
     }
+    h2 {
+      color: #3465a4;
+      margin-top: 2rem;
+      margin-bottom: 0.7rem;
+      border-bottom: 2px solid #e0e3ed;
+      padding-bottom: 0.28rem;
+      font-size: 1.23rem;
+    }
+    .cvlist {
+      margin-bottom: 2.2rem;
+      line-height: 1.76;
+    }
+    .cvlist b {
+      color: #202842;
+    }
+    .section-block { margin-bottom: 0.7rem; }
     .projects .project {
-      margin-bottom: 2rem;
+      margin-bottom: 2.3rem;
       overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
     }
     .projects img {
-      float: right;
-      max-width: 160px;
-      margin: 0 0 0.7em 1.2em;
+      max-width: 170px;
+      min-width: 100px;
+      margin-right: 1.6rem;
+      margin-bottom: 0.5rem;
       border-radius: 6px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 5px rgba(0,0,0,0.07);
     }
-    .projects b {
-      font-size: 1.1rem;
+    .project-desc {
+      flex: 1;
+      min-width: 200px;
+      word-break: break-word;
     }
-    footer {
-      margin-top: 2.5rem;
-      text-align: center;
-      color: #888;
-      font-size: 0.97rem;
+    @media (max-width: 950px) {
+      .main {
+        flex-direction: column;
+        min-width: 0;
+      }
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        border-radius: 10px 10px 0 0;
+        padding: 2rem 0.7rem 1.2rem 0.7rem;
+      }
+      .sidebar img {
+        margin: 0 1.2rem 0 0;
+      }
+      .links { flex-direction: row; flex-wrap: wrap; justify-content: center;}
+      .links a { margin: 0.18rem 0.6rem;}
+      .content {
+        padding: 1.7rem 0.9rem 2.2rem 0.9rem;
+      }
     }
     @media (max-width: 600px) {
-      .container {
-        padding: 1rem;
-      }
-      .profile-img {
-        float: none;
-        display: block;
-        margin: 0 auto 1rem auto;
-        width: 90px;
-        height: 90px;
-      }
-      .projects img {
-        float: none;
-        display: block;
-        margin: 0 auto 0.8rem auto;
-        max-width: 100%;
-      }
+      .main { margin: 0; border-radius: 0;}
+      .sidebar { border-radius: 0;}
+    }
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.98rem;
+      margin: 2rem 0 1rem 0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Replace 'profile.jpg' with the filename of your profile picture -->
-    <img src="profile.jpg" alt="Viktor Skantze" class="profile-img" />
+<div class="main">
+  <aside class="sidebar">
+    <!-- Replace with your own photo (profile.jpg) -->
+    <img src="profile.jpg" alt="Viktor Skantze">
     <h1>Viktor Skantze</h1>
     <p>
-      PhD in Mathematical Modelling · Data Scientist in Precision Nutrition<br />
-      Researcher | Applied ML | Integrative Health Science
+      PhD in Mathematical Modelling<br>
+      Data Scientist, Precision Nutrition<br>
+      Chalmers University of Technology
     </p>
-
     <div class="links">
-      <a href="https://www.linkedin.com/in/viktor-skantze-352159120" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://github.com/vskantze" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
       <a href="mailto:viktor.skantze@fcc.chalmers.se">Email</a>
+      <a href="https://www.linkedin.com/in/viktor-skantze-352159120" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/vskantze" target="_blank" rel="noopener">GitHub</a>
+      <a href="cv.pdf" target="_blank">CV (PDF)</a>
+    </div>
+  </aside>
+  <main class="content">
+    <h2>About me</h2>
+    <div>
+      I’m a data scientist and researcher specializing in mathematical modelling for personalized nutrition and health. My work bridges advanced statistics, machine learning, and integrative omics to derive actionable health insights. I hold a PhD focused on dynamic and integrative modelling for precision nutrition, and am passionate about translating science into real-world positive impact.
     </div>
 
-    <h2>About me</h2>
-    <p>
-      I’m a data scientist and researcher specializing in mathematical modelling for personalized nutrition and health. My work bridges advanced statistical methods, machine learning, and integrative biology to turn complex data into actionable health insights. I hold a PhD focused on precision nutrition, and I’m passionate about translating science into real-world solutions.
-    </p>
+    <h2>Degrees</h2>
+    <div class="cvlist">
+      <div class="section-block">
+        <b>2024</b> – Doctor of Philosophy in Mathematical Modelling for Precision Nutrition,<br>
+        <span>Chalmers University of Technology</span> <br>
+        <i>Thesis:</i> <span>Model-driven approaches to precision nutrition and health (in review)</span>
+      </div>
+      <div class="section-block">
+        <b>2018</b> – MSc in Engineering Mathematics,<br>
+        <span>Chalmers University of Technology</span>
+      </div>
+      <div class="section-block">
+        <b>2016</b> – BSc in Mathematics,<br>
+        <span>University of Gothenburg</span>
+      </div>
+    </div>
+
+    <h2>Positions</h2>
+    <div class="cvlist">
+      <div class="section-block">
+        <b>2020–2024</b> Doctoral student (PhD), Chalmers University of Technology
+      </div>
+      <div class="section-block">
+        <b>2018–2020</b> Research assistant, Mathematical Sciences, Chalmers
+      </div>
+      <div class="section-block">
+        <b>2016–2018</b> Data science consultant, Industry/Startup (part-time)
+      </div>
+    </div>
+
+    <h2>Teaching</h2>
+    <div class="cvlist">
+      <div class="section-block">
+        <b>2023</b> Guest lecturer, Precision Nutrition, MSc Biomedical Engineering, Chalmers/University of Gothenburg
+      </div>
+      <div class="section-block">
+        <b>2021–2024</b> Teaching assistant, Mathematical Statistics, Probability, Machine Learning, Chalmers
+      </div>
+    </div>
+
+    <h2>Publications</h2>
+    <div class="cvlist">
+      <div class="section-block">
+        (Example) Skantze V, Smith J, et al. Improving glucose prediction with individualized dynamic models. <i>Annals of Nutrition Science</i> (2024)
+      </div>
+    </div>
 
     <h2>Selected Projects</h2>
     <div class="projects">
       <div class="project">
-        <img src="glucose.png" alt="Dynamic Glucose Prediction" />
-        <b>Dynamic Glucose Prediction</b><br />
-        Developed mathematical models to personalize insulin delivery for type 1 diabetes and mathematically optimize meals for type 2 diabetes,
-        enabling improved blood glucose control.<br />
-        <i>Figure:</i> Example of predicted vs. observed glucose profiles.
+        <img src="glucose.png" alt="Dynamic Glucose Prediction"/>
+        <div class="project-desc">
+          <b>Dynamic Glucose Prediction</b><br>
+          Developed mathematical models to personalize insulin delivery for type 1 diabetes and optimize meals for type 2 diabetes, enabling improved blood glucose control. <br>
+          <i>Figure:</i> Example of predicted vs. observed glucose profiles.
+        </div>
       </div>
-
       <div class="project">
-        <img src="metabotyping.png" alt="Metabotyping with Tensor Modelling" />
-        <b>Metabotyping with Tensor Modelling</b><br />
-        Created workflows for metabolic response clustering using dynamic glucose data and tensor decomposition, identifying meaningful metabolic subgroups.<br />
-        <i>Figure:</i> Clustering visualization from model output.
+        <img src="metabotyping.png" alt="Metabotyping with Tensor Modelling"/>
+        <div class="project-desc">
+          <b>Metabotyping with Tensor Modelling</b><br>
+          Workflow for clustering metabolic responders from dynamic glucose data using tensor decomposition and statistics. <br>
+          <i>Figure:</i> Clustering visualization from model output.
+        </div>
       </div>
-
       <div class="project">
-        <img src="multimetabolite.png" alt="Multi-metabolite Model" />
-        <b>Multi-metabolite Prediction</b><br />
-        Developed unified models to predict postprandial levels of 79 metabolites within a single statistical framework.<br />
-        <i>Figure:</i> Heatmap showing model accuracy across metabolites.
+        <img src="multimetabolite.png" alt="Multi-metabolite Model"/>
+        <div class="project-desc">
+          <b>Multi-metabolite Prediction</b><br>
+          Unified statistical models to predict postprandial levels of 79 metabolites after meals. <br>
+          <i>Figure:</i> Heatmap of model performance across metabolite spectrum.
+        </div>
       </div>
-
       <div class="project">
-        <img src="multiomics.png" alt="Multi-omics Variation Analysis" />
-        <b>Multi-omics Variation Analysis</b><br />
-        Integrated metabolomics and microbiota profiles to stratify metabolic health in large population cohorts.<br />
-        <i>Figure:</i> Schematic of the multi-omics data integration pipeline.
+        <img src="multiomics.png" alt="Multi-omics Variation Analysis"/>
+        <div class="project-desc">
+          <b>Multi-omics Variation Analysis</b><br>
+          Integrated metabolomics and microbiota data to stratify metabolic health in populations.<br>
+          <i>Figure:</i> Schematic of multi-omics data integration pipeline.
+        </div>
       </div>
     </div>
-
-    <h2>Contact</h2>
-    <p>
-      For collaboration, speaking, or consulting:<br />
-      <strong>Email:</strong> viktor.skantze@fcc.chalmers.se
-    </p>
-  </div>
-  <footer>&copy; 2025 Viktor Skantze · Powered by GitHub Pages</footer>
+  </main>
+</div>
+<footer>
+  &copy; 2025 Viktor Skantze · Powered by GitHub Pages
+</footer>
 </body>
 </html>
